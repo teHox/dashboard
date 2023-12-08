@@ -1,6 +1,6 @@
 const dartSass = require("sass");
 const gulpSass = require("gulp-sass");
-const { src, dest, watch, parallel, series } = require("gulp");
+const { src, dest, watch } = require("gulp");
 const sourceMap = require("gulp-sourcemaps");
 const autoPrefixer = require("gulp-autoprefixer");
 const sass = gulpSass(dartSass);
@@ -16,7 +16,7 @@ const styles = () =>
     .pipe(
       autoPrefixer({
         grid: "no-autoplace",
-      })
+      }),
     )
     .pipe(cleanCss())
     .pipe(sourceMap.write("./"))
